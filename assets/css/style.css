@@ -32,11 +32,7 @@ body {
   padding: 10%;
 }
 
-.question {
-  border: 2px black solid;
-}
-
-#question {
+#end {
   background-color: #fff;
   width: 35%;
   height: 100%;
@@ -47,24 +43,35 @@ body {
   color: #000;
 }
 
-#question p {
+.question {
+  background-color: #fff;
+  width: 35%;
+  height: 100%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #000;
+}
+
+.question p {
   padding: 2%;
 }
 
 
-#answer1 {
+.answer1 {
   background-color: #cb3c1f;
 }
 
-#answer2 {
+.answer2 {
   background-color: #007680;
 }
 
-#answer3 {
+.answer3 {
   background-color: #177132;
 }
 
-#answer4 {
+.answer4 {
   background-color: #299046;
 }
 
