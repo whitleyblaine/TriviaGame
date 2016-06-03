@@ -17,13 +17,27 @@ body {
   padding: 10%;
 }
 
+#timer {
+  background-color: white;
+  width: 35%;
+  height: 100px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+#timer p {
+  padding-top: 20px;
+}
+
 #start {
   background-color: #009bac;
   width: 35%;
   height: 100px;
   text-align: center;
   margin: 0 auto;
-  margin-top: 70px;
+  margin-top: 30px;
   font-size: 20px;
   color: white;
 }
