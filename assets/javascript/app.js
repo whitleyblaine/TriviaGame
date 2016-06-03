@@ -70,8 +70,18 @@ var showResults = function() {
   $('#timer').addClass('hide');
   $('#q4').addClass('hide');
   $('#end').removeClass('hide');
+  var timeoutId = window.setTimeout(reset, 10 * 1000)
 };
 
+var reset = function() {
+  timeLeft = 10;
+  question = 0;
+  correct = 0;
+  wrong = 0;
+  $('#timer').removeClass('hide');
+  $('#end').addClass('hide');
+  $('#start').removeClass('hide');
+};
 
 $('#start').on('click', function () {
   showQ1();
