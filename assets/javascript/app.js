@@ -2,7 +2,7 @@ var question = 0;
 var correct = 0;
 var wrong = 0;
 
-var timeLeft = 10;
+var timeLeft = 15;
 
 var intervalId;
 
@@ -35,7 +35,7 @@ var showQ1 = function () {
   question++;
   $('#start').addClass('hide');
   $('#q1').removeClass("hide");
-  timeLeft = 10;
+  timeLeft = 15;
   startTimer();
 };
 
@@ -43,7 +43,9 @@ var showQ2 = function () {
   question++;
   $('#q1').addClass('hide');
   $('#q2').removeClass('hide');
-  timeLeft = 10;
+  $('.wrongAnswerPage').addClass('hide');
+  $('.rightAnswerPage').addClass('hide');
+  timeLeft = 15;
   startTimer();
 };
 
@@ -51,7 +53,9 @@ var showQ3 = function () {
   question++;
   $('#q2').addClass('hide');
   $('#q3').removeClass('hide');
-  timeLeft = 10;
+  $('.wrongAnswerPage').addClass('hide');
+  $('.rightAnswerPage').addClass('hide');
+  timeLeft = 15;
   startTimer();
 };
 
@@ -59,7 +63,9 @@ var showQ4 = function () {
   question++;
   $('#q3').addClass('hide');
   $('#q4').removeClass('hide');
-  timeLeft = 10;
+  $('.wrongAnswerPage').addClass('hide');
+  $('.rightAnswerPage').addClass('hide');
+  timeLeft = 15;
   startTimer();
 };
 
@@ -67,6 +73,8 @@ var showResults = function() {
   $('#correct').html(correct);
   $('#wrong').html(wrong);
   alert('Game over!');
+  $('.wrongAnswerPage').addClass('hide');
+  $('.rightAnswerPage').addClass('hide');
   $('#timer').addClass('hide');
   $('#q4').addClass('hide');
   $('#end').removeClass('hide');
@@ -74,7 +82,7 @@ var showResults = function() {
 };
 
 var reset = function() {
-  timeLeft = 10;
+  timeLeft = 15;
   question = 0;
   correct = 0;
   wrong = 0;
@@ -89,33 +97,32 @@ $('#start').on('click', function () {
 
 $('.incorrect').on('click', function () {
   wrong++;
-  alert('Wrong! Try again.');
+  clearInterval(intervalId);
+  $('.question').addClass('hide');
+  $('.wrongAnswerPage').removeClass('hide');
+  if (question == 1) {
+    var timeoutId = window.setTimeout(showQ2, 5 * 1000)
+  } else if (question == 2) {
+    var timeoutId = window.setTimeout(showQ3, 5 * 1000)
+  } else if (question == 3) {
+    var timeoutId = window.setTimeout(showQ4, 5 * 1000)
+  } else if (question == 4) {
+    var timeoutId = window.setTimeout(showResults, 5 * 1000)
+  };
 });
 
-$('.correct1').on('click', function () {
+$('.correct').on('click', function () {
   correct++;
   clearInterval(intervalId);
-  alert('Correct!');
-  showQ2();
-});
-
-$('.correct2').on('click', function () {
-  correct++;
-  clearInterval(intervalId);
-  alert('Correct!');
-  showQ3();
-});
-
-$('.correct3').on('click', function () {
-  correct++;
-  clearInterval(intervalId);
-  alert('Correct!');
-  showQ4();
-});
-
-$('.correct4').on('click', function () {
-  correct++;
-  clearInterval(intervalId);
-  alert('Correct!');
-  showResults();
+  $('.question').addClass('hide');
+  $('.rightAnswerPage').removeClass('hide');
+  if (question == 1) {
+    var timeoutId = window.setTimeout(showQ2, 5 * 1000)
+  } else if (question == 2) {
+    var timeoutId = window.setTimeout(showQ3, 5 * 1000)
+  } else if (question == 3) {
+    var timeoutId = window.setTimeout(showQ4, 5 * 1000)
+  } else if (question == 4) {
+    var timeoutId = window.setTimeout(showResults, 5 * 1000)
+  };
 });

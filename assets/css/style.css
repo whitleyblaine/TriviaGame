@@ -98,6 +98,24 @@ div .choice p:hover {
   display: none;
 }
 
-#wrongAnswerPage {
-  
+.wrongAnswerPage {
+  background-color: #fff;
+  width: 35%;
+  height: 100%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #000;
+}
+
+.rightAnswerPage {
+  background-color: #fff;
+  width: 35%;
+  height: 100%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #000;
 }
