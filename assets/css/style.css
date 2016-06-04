@@ -4,13 +4,12 @@ body {
 }
 
 #header {
-  background-color: #282e2e;
   color: white;
   width: 35%;
   height: 40px;
   text-align: center;
   margin: 20px auto;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 #header p {
@@ -34,13 +33,13 @@ body {
 }
 
 #start {
-  background-color: #009bac;
   width: 10%;
   height: 50px;
   text-align: center;
   margin: 100px auto;
   font-size: 20px;
-  color: white;
+  color: 
+#66c3cd;
   opacity: 0.9;
 }
 
@@ -57,6 +56,23 @@ body {
   margin-top: 20px;
   font-size: 20px;
   color: #000;
+}
+
+#funnyText {
+  position: absolute;
+  top: 100px;
+  left: 148px;
+}
+
+#funnyText img {
+  border-radius: 45% 45% 0 0;
+  opacity: 0.1;
+}
+
+#funnyText2 {
+  position: absolute;
+  right: 80px;
+  bottom: 100px;
 }
 
 .question {

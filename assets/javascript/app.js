@@ -31,6 +31,12 @@ var startTimer = function () {
   };
 };
 
+var answerPageHide = function() {
+  $('.wrongAnswerPage').addClass('hide');
+  $('.rightAnswerPage').addClass('hide');
+  $('#funnyText2').addClass('hide');
+};
+
 var showQ1 = function () {
   question++;
   $('#start').addClass('hide');
@@ -43,8 +49,7 @@ var showQ2 = function () {
   question++;
   $('#q1').addClass('hide');
   $('#q2').removeClass('hide');
-  $('.wrongAnswerPage').addClass('hide');
-  $('.rightAnswerPage').addClass('hide');
+  answerPageHide();
   timeLeft = 15;
   startTimer();
 };
@@ -53,8 +58,7 @@ var showQ3 = function () {
   question++;
   $('#q2').addClass('hide');
   $('#q3').removeClass('hide');
-  $('.wrongAnswerPage').addClass('hide');
-  $('.rightAnswerPage').addClass('hide');
+  answerPageHide();
   timeLeft = 15;
   startTimer();
 };
@@ -63,8 +67,7 @@ var showQ4 = function () {
   question++;
   $('#q3').addClass('hide');
   $('#q4').removeClass('hide');
-  $('.wrongAnswerPage').addClass('hide');
-  $('.rightAnswerPage').addClass('hide');
+  answerPageHide();
   timeLeft = 15;
   startTimer();
 };
@@ -73,8 +76,7 @@ var showResults = function() {
   $('#correct').html(correct);
   $('#wrong').html(wrong);
   alert('Game over!');
-  $('.wrongAnswerPage').addClass('hide');
-  $('.rightAnswerPage').addClass('hide');
+  answerPageHide();
   $('#timer').addClass('hide');
   $('#q4').addClass('hide');
   $('#end').removeClass('hide');
@@ -98,6 +100,7 @@ $('#start').on('click', function () {
 $('.incorrect').on('click', function () {
   wrong++;
   clearInterval(intervalId);
+  $('#funnyText2').removeClass('hide');
   $('.question').addClass('hide');
   $('.wrongAnswerPage').removeClass('hide');
   if (question == 1) {
@@ -114,6 +117,7 @@ $('.incorrect').on('click', function () {
 $('.correct').on('click', function () {
   correct++;
   clearInterval(intervalId);
+  $('#funnyText2').removeClass('hide');
   $('.question').addClass('hide');
   $('.rightAnswerPage').removeClass('hide');
   if (question == 1) {
