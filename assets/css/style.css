@@ -48,14 +48,13 @@ body {
 }
 
 #end {
-  background-color: #fff;
   width: 35%;
   height: 100%;
   text-align: center;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 80px;
   font-size: 20px;
-  color: #000;
+  color: #fff;
 }
 
 #funnyText {
